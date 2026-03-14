@@ -1,94 +1,384 @@
 body{
-font-family: Arial, sans-serif;
+
+font-family:Arial, sans-serif;
 margin:0;
-padding:0;
-background: linear-gradient(135deg,#ffe4ec,#fff0f5);
+color:#333;
+
+/* multi gradient background */
+
+background:
+linear-gradient(120deg,#f6d365,#fda085),
+linear-gradient(300deg,#84fab0,#8fd3f4),
+linear-gradient(200deg,#fccb90,#d57eeb);
+
+background-blend-mode:screen;
+
+min-height:100vh;
+
 }
 
-/* Header dashboard */
-header{
+
+/* NAVBAR */
+
+.navbar{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:18px 40px;
+
 background:white;
-padding:20px;
-text-align:center;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+
+position:sticky;
+top:0;
+z-index:100;
+
 }
 
-header h1{
-margin:0;
+
+/* LOGO */
+
+.logo{
+
 color:#ff4da6;
+font-size:24px;
+transition:0.3s;
+
 }
 
-/* products section */
+.logo:hover{
+
+transform:scale(1.1);
+color:#ff2a8a;
+
+}
+
+
+/* NAV LINKS */
+
+.nav-links{
+
+list-style:none;
+display:flex;
+gap:25px;
+
+}
+
+.nav-links a{
+
+text-decoration:none;
+color:#333;
+font-weight:bold;
+position:relative;
+
+}
+
+/* nav hover */
+
+.nav-links a:hover{
+
+color:#ff4da6;
+
+}
+
+
+/* underline animation */
+
+.nav-links a::after{
+
+content:"";
+position:absolute;
+left:0;
+bottom:-4px;
+
+width:0%;
+height:2px;
+
+background:#ff4da6;
+
+transition:0.3s;
+
+}
+
+.nav-links a:hover::after{
+
+width:100%;
+
+}
+
+
+/* HOME */
+
+.home{
+
+text-align:center;
+padding:100px 20px;
+
+background:linear-gradient(135deg,#ffecd2,#fcb69f);
+
+}
+
+
+/* SHOP BUTTON */
+
+.shop-btn{
+
+background:#ff4da6;
+color:white;
+
+padding:12px 20px;
+
+border-radius:6px;
+
+text-decoration:none;
+
+display:inline-block;
+
+margin-top:20px;
+
+transition:0.3s;
+
+}
+
+.shop-btn:hover{
+
+background:#ff2a8a;
+
+}
+
+
+/* PRODUCTS */
+
 .products{
+
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
 gap:30px;
 padding:40px;
+
 }
 
-/* card */
+
+/* CARD */
+
 .card{
+
 background:white;
+
 padding:15px;
+
 border-radius:12px;
-width:220px;
-box-shadow:0 6px 15px rgba(0,0,0,0.1);
+
+width:230px;
+
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+
 text-align:center;
-transition:0.3s;
+
 }
 
-/* card hover */
-.card:hover{
-transform:translateY(-6px);
-box-shadow:0 15px 30px rgba(0,0,0,0.2);
-}
 
-/* image */
+/* IMAGE */
+
 .card img{
+
 width:100%;
 border-radius:10px;
+
 transition:0.3s;
+
 }
 
-/* image hover */
+/* hover only on image */
+
 .card img:hover{
-transform:scale(1.05);
+
+transform:scale(1.07);
+box-shadow:0 10px 20px rgba(0,0,0,0.25);
+
 }
+
+
+/* remove underline */
+
+.order-link{
+
+text-decoration:none;
+
+}
+
 
 /* WhatsApp button */
+
 .whatsapp-btn{
+
 background:#25D366;
+
 color:white;
+
 border:none;
+
 padding:10px 15px;
+
 border-radius:6px;
+
 cursor:pointer;
+
 margin-top:10px;
-font-size:14px;
+
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 gap:6px;
+
 transition:0.3s;
+
 }
 
-/* button hover */
+/* hover only on button */
+
 .whatsapp-btn:hover{
+
 background:#1ebe5d;
+
 transform:scale(1.05);
+
 }
 
-/* mobile responsive */
+
+/* ABOUT */
+
+.about{
+
+padding:60px 20px;
+
+text-align:center;
+
+background:linear-gradient(120deg,#cfd9df,#e2ebf0);
+
+margin:20px;
+
+border-radius:10px;
+
+}
+
+
+/* CONTACT */
+
+.contact{
+
+padding:60px 20px;
+
+text-align:center;
+
+background:linear-gradient(120deg,#fddb92,#d1fdff);
+
+margin:20px;
+
+border-radius:10px;
+
+}
+
+
+/* FOOTER */
+
+footer{
+
+text-align:center;
+padding:20px;
+
+background:#ff4da6;
+
+color:white;
+
+margin-top:30px;
+
+}
+
+
+/* MOBILE */
+
 @media (max-width:600px){
 
+.navbar{
+
+flex-direction:column;
+gap:10px;
+
+}
+
 .products{
+
 flex-direction:column;
 align-items:center;
+
 }
 
 .card{
-width:85%;
+
+width:90%;
+
 }
+
+}
+
+.section-title{
+
+font-family:'Playfair Display', serif;
+
+text-align:center;
+
+font-size:40px;
+
+color:#ff4da6;
+
+margin-top:40px;
+
+letter-spacing:2px;
+
+position:relative;
+
+}
+
+
+/* decorative line */
+
+.section-title::after{
+
+content:"";
+
+display:block;
+
+width:80px;
+
+height:3px;
+
+background:linear-gradient(90deg,#ff4da6,#ff99cc);
+
+margin:10px auto;
+
+border-radius:2px;
+
+}
+
+body{
+
+font-family:'Playfair Display', serif;
+
+margin:0;
+color:#333;
+
+background:
+linear-gradient(120deg,#f6d365,#fda085),
+linear-gradient(300deg,#84fab0,#8fd3f4),
+linear-gradient(200deg,#fccb90,#d57eeb);
+
+background-blend-mode:screen;
+
+min-height:100vh;
 
 }
